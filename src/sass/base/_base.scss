@@ -1,0 +1,36 @@
+@use '../abstract/variables' as *;
+@use 'sass:math';
+
+html {
+	font-size: math.div(100, 16) * 10%; //62.5% - 10px
+	// font-size: 10px;
+
+	@media only screen and (max-width: $lg) {
+		font-size: math.div(100, 16) * 9%;
+	}
+
+	@media only screen and (max-width: $md) {
+		font-size: math.div(100, 16) * 8%;
+	}
+}
+
+body {
+	font-family: $font-primary;
+	font-size: $font-size;
+	line-height: 150%;
+	color: var(--color-primary);
+
+	background-color: var(--color-grey-2);
+	scroll-behavior: smooth;
+
+	height: 100vh;
+	display: flex;
+
+	background: var(--bg);
+	background-size: cover;
+
+	@media only screen and (max-width: $md) {
+		display: block;
+		background: none;
+	}
+}

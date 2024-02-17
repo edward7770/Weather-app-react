@@ -1,0 +1,140 @@
+@use 'sass:math';
+
+// COLORS
+%colors {
+	--color-white: #fff;
+	--color-grey-1: rgba(100%, 100%, 100%, 0.7);
+	--color-grey-2: rgba(100%, 100%, 100%, 0.3);
+
+	--color-black: #000;
+	--color-grey-1-dark: rgba(0%, 0%, 0%, 0.7);
+	--color-grey-2-dark: rgba(0%, 0%, 0%, 0.3);
+}
+
+%light {
+	--color-primary: var(--color-white);
+	--color-secondary: var(--color-grey-1);
+	--color-tertiary: var(--color-grey-2);
+}
+
+%light-bottom {
+	--color-bottom: var(--color-white);
+	--color-bottom-2: var(--color-grey-1);
+}
+
+%dark {
+	--color-primary: var(--color-black);
+	--color-secondary: var(--color-grey-1-dark);
+	--color-tertiary: var(--color-grey-2-dark);
+}
+
+%dark-bottom {
+	--color-bottom: var(--color-black);
+	--color-bottom-2: var(--color-grey-1-dark);
+}
+
+// DEFAULT - Light
+:root {
+	@extend %colors;
+	@extend %light;
+	@extend %light-bottom;
+
+	--bg: url('/src/images/Clouds.jpg') no-repeat;
+	--bg-sm: url('/src/images/Clouds-Small.jpg') no-repeat;
+}
+
+// CLOUDS - Light
+.theme-1 {
+	--bg: url('/src/images/Clouds.jpg') no-repeat;
+	--bg-sm: url('/src/images/Clouds-Small.jpg') no-repeat;
+
+	@extend %light;
+	@extend %light-bottom;
+
+	&h {
+		--bg: url('/src/images/Tornado.jpg') no-repeat;
+		--bg-sm: url('/src/images/Tornado-Small.jpg') no-repeat;
+
+		@extend %light;
+		@extend %light-bottom;
+	}
+}
+
+// CLEAR - Light
+.theme-2 {
+	--bg: url('/src/images/Clear-Day.jpg') no-repeat;
+	--bg-sm: url('/src/images/Clear-Day-Small.jpg') no-repeat;
+
+	@extend %light;
+	@extend %light-bottom;
+
+	&n {
+		--bg: url('/src/images/Clear-Night.jpg') no-repeat;
+		--bg-sm: url('/src/images/Clear-Night-Small.jpg') no-repeat;
+
+		@extend %light;
+		@extend %light-bottom;
+	}
+}
+
+// DUST - Dark
+.theme-3 {
+	--bg: url('/src/images/Dust.jpg') no-repeat;
+	--bg-sm: url('/src/images/Dust-Small.jpg') no-repeat;
+
+	@extend %dark;
+	@extend %light-bottom;
+}
+
+// Fog - Dark
+.theme-4 {
+	--bg: url('/src/images/Fog.jpg') no-repeat;
+	--bg-sm: url('/src/images/Fog-Small.jpg') no-repeat;
+
+	@extend %dark;
+	@extend %dark-bottom;
+}
+
+// SNOW - Dark
+.theme-5 {
+	--bg: url('/src/images/Snow.jpg') no-repeat;
+	--bg-sm: url('/src/images/Snow-Small.jpg') no-repeat;
+
+	@extend %dark;
+	@extend %dark-bottom;
+}
+
+// RAIN - Light
+.theme-6 {
+	--bg: url('/src/images/Rain.jpg') no-repeat;
+	--bg-sm: url('/src/images/Rain-Small.jpg') no-repeat;
+
+	@extend %light;
+	@extend %light-bottom;
+}
+
+// THUNDERSTORM - Light
+.theme-7 {
+	--bg: url('/src/images/Lightning.jpg') no-repeat;
+	--bg-sm: url('/src/images/Lightning-Small.jpg') no-repeat;
+
+	@extend %light;
+	@extend %light-bottom;
+}
+
+// FONTS
+$font-size: 1.8rem;
+$font-primary: 'Lato', sans-serif;
+$font-display: 'Oxygen', sans-serif;
+
+// BREAK POINTS
+$lg: math.div(1200, 16) * 1em;
+$lg-sm: math.div(1100, 16) * 1em;
+$md: math.div(975, 16) * 1em;
+$md-sm: math.div(680, 16) * 1em;
+$sm: math.div(400, 16) * 1em;
+$sm-sm: math.div(320, 16) * 1em;
+
+// BACKGROUND
+$bg: '/src/images/Clouds.jpg';
+$bg-sm: '/src/images/Clouds-Small.jpg';

@@ -1,0 +1,129 @@
+@use '../abstract/variables' as *;
+
+// Left Layout
+.sidebar {
+	flex-basis: 60rem;
+	padding: 4rem 6rem;
+	position: relative;
+
+	@media only screen and (max-width: $lg-sm) {
+		padding: 3rem;
+	}
+
+	@media only screen and (max-width: $sm-sm) {
+		padding: 3rem 2rem;
+	}
+
+	@media only screen and (max-width: $md) {
+		height: 100vh;
+		background: var(--bg);
+		background-position: 50%;
+		background-size: cover;
+	}
+
+	display: flex;
+	flex-direction: column;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__main {
+		margin-top: 3rem;
+
+		@media only screen and (max-width: $md) {
+			margin-top: 1.5rem;
+		}
+	}
+
+	&__break {
+		width: 10%;
+		border-style: solid;
+		border-width: 1px;
+
+		margin: 6rem 0 4rem 0;
+	}
+}
+
+// Inside Main
+
+.temp {
+	display: flex;
+	align-items: flex-start;
+
+	@media only screen and (max-width: $md) {
+		margin-top: 1rem;
+	}
+
+	&__value {
+		// Font: At least font-size and font-family
+		font: 8.5rem $font-display;
+
+		@media only screen and (max-width: $md) {
+			font-size: 11rem;
+		}
+	}
+
+	&__types.active {
+		color: var(--color-primary);
+		font-weight: bold;
+	}
+
+	&__type {
+		-webkit-tap-highlight-color: transparent;
+		display: flex;
+		justify-content: space-between;
+		cursor: pointer;
+
+		font: 3rem $font-display;
+
+		@media only screen and (max-width: $md) {
+			font-size: 4rem;
+		}
+
+		color: var(--color-secondary);
+		font-weight: 300;
+		line-height: normal;
+
+		margin-top: 2rem;
+		margin-left: 1rem;
+
+		&--c {
+			margin-right: 3rem;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: -2rem;
+
+				height: 70%;
+				width: 3px;
+
+				background-color: var(--color-primary);
+			}
+		}
+	}
+}
+
+.weather {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 10rem;
+}
+
+.copyright {
+	margin-top: auto;
+	font-size: 1.3rem;
+	text-align: center;
+	color: var(--color-bottom-2);
+
+	a {
+		color: var(--color-bottom);
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,108 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.search-bar {
+	display: flex;
+	width: 100%;
+	border-radius: 30px;
+	border: 1.25px solid var(--color-secondary);
+	background-color: var(--color-tertiary);
+
+	margin: 0 auto;
+	padding: 0.5rem 0 0.5rem 2rem;
+	transition: all 0.3s;
+	z-index: 100;
+
+	&:hover {
+		border-color: var(--color-primary);
+		box-shadow: 1px 1px 6px 1px var(--color-tertiary);
+	}
+
+	&:focus-within {
+		border-color: var(--color-primary);
+		box-shadow: 1px 1px 6px 1px var(--color-tertiary);
+		outline: none;
+	}
+
+	&__input {
+		border: none;
+		display: block;
+
+		flex: 1;
+		background: transparent;
+		outline: none;
+
+		@media only screen and (max-width: $sm-sm) {
+			width: 60%;
+		}
+
+		font-size: 16px;
+		color: var(--color-white);
+
+		// input::-webkit-input-placeholder
+		&::-webkit-input-placeholder {
+			color: var(--color-grey-1);
+			transition: all 0.3s;
+		}
+
+		&:focus::-webkit-input-placeholder {
+			color: var(--color-white);
+		}
+	}
+
+	&__btn-group {
+		display: flex;
+		margin-right: 1rem;
+
+		@media only screen and (max-width: $sm-sm) {
+			margin-right: 0.75rem;
+		}
+	}
+
+	&__btn {
+		&,
+		&:link,
+		&:visited {
+			margin-right: 0.75rem;
+
+			@media only screen and (max-width: $sm-sm) {
+				margin-right: 0;
+			}
+
+			font-family: $font-display;
+			font-size: 17px;
+			text-decoration: none;
+
+			@include flexCenter;
+			color: var(--color-grey-1);
+			background: transparent;
+			border-radius: 100%;
+			height: 35px;
+			width: 35px;
+			position: relative;
+
+			transition: all 0.2s;
+			border: none;
+			cursor: pointer;
+		}
+
+		&:hover {
+			color: var(--color-white);
+		}
+
+		&:active,
+		&:focus {
+			outline: none;
+			color: var(--color-white);
+			background: var(--color-grey-2);
+		}
+
+		&--location {
+			&,
+			&:link,
+			&:visited {
+				font-size: 20px;
+			}
+		}
+	}
+}

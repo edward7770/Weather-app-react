@@ -1,0 +1,23 @@
+{
+	"name": "weather-app",
+	"version": "1.0.0",
+	"description": "Check the weather for any city in the world, with weather forecast of next 7 days and relevant images of weather.",
+	"type": "module",
+	"scripts": {
+		"start": "parcel index.html",
+		"build": "parcel build index.html --dist-dir ./dist"
+	},
+	"author": "Vatsal Singh <vatsalsinghkv@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@parcel/transformer-image": "^2.1.1",
+		"@parcel/transformer-svg": "^2.1.0",
+		"dotenv": "^10.0.0",
+		"parcel": "^2.1.1"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.1.1",
+		"@parcel/transformer-svgo": "^2.0.0-nightly.1739",
+		"autoprefixer": "^10.4.1"
+	}
+}

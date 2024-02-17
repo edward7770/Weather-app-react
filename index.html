@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Check the weather for any city in the world, with weather forecast of next 7 days and relevant images of weather."
+		/>
+
+		<meta name="author" content="Vatsal Singh" />
+
+		<meta
+			name="keywords"
+			content="weather, forecast, current weather, web app, weather app, forecast, app"
+		/>
+
+		<!-- Favicons -->
+		<link
+			rel="icon"
+			type="image/png"
+			href="src/images/favicon-32x32.png"
+			sizes="32x32"
+		/>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+
+		<meta property="og:url" content="https://weather-kv.netlify.app/" />
+
+		<meta property="og:title" content="Weather App" />
+
+		<meta
+			property="og:description"
+			content="Check the weather for any city in the world, with weather forecast of next 7 days and relevant images of weather."
+		/>
+
+		<meta
+			property="og:image"
+			itemprop="image"
+			content="https://user-images.githubusercontent.com/68834718/148419702-491fa08d-e520-4e2f-b219-374ec7118b2b.png"
+		/>
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+
+		<meta property="twitter:url" content="https://weather-kv.netlify.app/" />
+
+		<meta property="twitter:title" content="Weather App" />
+
+		<meta
+			property="twitter:description"
+			content="Check the weather for any city in the world, with weather forecast of next 7 days and relevant images of weather."
+		/>
+
+		<meta
+			property="twitter:image"
+			content="https://user-images.githubusercontent.com/68834718/148419702-491fa08d-e520-4e2f-b219-374ec7118b2b.png"
+		/>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oxygen:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Font Awesome Icons-->
+		<script
+			defer
+			src="https://kit.fontawesome.com/f98879ca63.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- jQuery -->
+		<script
+			defer
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		></script>
+
+		<!-- Custom Script -->
+		<script defer type="module" src="src/js/controller.js"></script>
+
+		<link rel="stylesheet" href="src/sass/main.scss" />
+		<title>Weather App | Forecast</title>
+	</head>
+
+	<body class="theme-1">
+		<section class="sidebar">
+			<header class="sidebar__header">
+				<form class="search-bar" autocomplete="off">
+					<input
+						class="search-bar__input"
+						type="text"
+						placeholder="Enter the location"
+						id="bar"
+					/>
+
+					<div class="search-bar__btn-group">
+						<button class="search-bar__btn btn--search">
+							<i class="fas fa-search"></i>
+						</button>
+
+						<a
+							href="#"
+							id="btn-location"
+							class="search-bar__btn search-bar__btn--location"
+						>
+							<i class="fas fa-crosshairs"></i>
+						</a>
+					</div>
+				</form>
+			</header>
+
+			<main class="sidebar__main">
+				<!-- <div class="temp">
+          <h1 class="temp__value">26</h1>
+          <div class="temp__type">
+            <p class="temp__type--c temp__types active">°C</p>
+            <p class="temp__type--f temp__types">°F</p>
+          </div>
+        </div>
+
+        <div class="weather">
+          <img
+            class="weather__img"
+            src="src/animated/cloudy.svg"
+            alt="weather"
+          />
+          <p class="weather-status heading-primary">cloudy</p>
+        </div>
+
+        <hr class="sidebar__break" />
+
+        <div class="info">
+          <p class="location heading-primary--sub">Auraiya</p>
+          <p class="time heading-tertiary heading-tertiary--white">
+            Monday, 28 Nov 2021
+          </p>
+        </div> -->
+			</main>
+
+			<p class="copyright">
+				&copy; Copyright 2022 by
+				<a
+					class="github-link"
+					target="_blank"
+					href="https://github.com/vatsalsinghkv"
+					>Vatsal Singh</a
+				>. All rights reserved
+			</p>
+		</section>
+
+		<section class="details">
+			<div class="details__content">
+				<!-- <h2 class="heading-secondary u-mb-5">Weather Details</h2>
+
+        <div class="current-day">
+          <div class="weather-details">
+            <h3 class="weather-details__main weather-details__main--wind">
+              7 mph
+            </h3>
+            <p
+              class="heading-tertiary weather-details__type weather-details__type--wind"
+            >
+              Wind
+            </p>
+          </div>
+
+          <div class="weather-details">
+            <h3 class="weather-details__main weather-details__main--humidity">
+              84%
+            </h3>
+            <p
+              class="heading-tertiary weather-details__type weather-details__type--humidity"
+            >
+              Humidity
+            </p>
+          </div>
+
+          <div class="weather-details">
+            <h3 class="weather-details__main weather-details__main--sunrise">
+              05:40
+            </h3>
+            <p
+              class="heading-tertiary weather-details__type weather-details__type--sunrise"
+            >
+              Sunrise
+            </p>
+          </div>
+
+          <div class="weather-details">
+            <h3 class="weather-details__main weather-details__main--visibility">
+              6.4 miles
+            </h3>
+            <p
+              class="heading-tertiary weather-details__type weather-details__type--visibility"
+            >
+              Visibility
+            </p>
+          </div>
+
+          <div class="weather-details">
+            <h3
+              class="weather-details__main weather-details__main--air-pressure"
+            >
+              998 mb
+            </h3>
+            <p
+              class="heading-tertiary weather-details__type weather-details__type--air-pressure"
+            >
+              Air Pressure
+            </p>
+          </div>
+
+          <div class="weather-details">
+            <h3 class="weather-details__main weather-details__main--sunset">
+              06:20
+            </h3>
+            <p
+              class="heading-tertiary weather-details__type weather-details__type--sunset"
+            >
+              Sunset
+            </p>
+          </div>
+        </div>
+
+        <div class="next-days u-mt-7">
+          <h2 class="heading-secondary u-mb-5">Next Days</h2>
+
+          <div class="next-days__details">
+            <div class="day active">
+              <h5 class="day--name day--1">Tue</h5>
+              <img
+                src="src/animated/day.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">29°</div>
+                <div class="day__temp--min">31°</div>
+              </div>
+            </div>
+
+            <div class="day">
+              <h5 class="day--name day--2">Wed</h5>
+              <img
+                src="src/animated/cloudy-day-3.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">30°</div>
+                <div class="day__temp--min">32°</div>
+              </div>
+            </div>
+
+            <div class="day">
+              <h5 class="day--name day--3">Thu</h5>
+              <img
+                src="src/animated/rainy-3.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">22°</div>
+                <div class="day__temp--min">28°</div>
+              </div>
+            </div>
+
+            <div class="day">
+              <h5 class="day--name day--4">Fri</h5>
+              <img
+                src="src/animated/snowy-3.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">21°</div>
+                <div class="day__temp--min">23°</div>
+              </div>
+            </div>
+
+            <div class="day">
+              <h5 class="day--name day--5">Sat</h5>
+              <img
+                src="src/animated/rainy-7.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">24°</div>
+                <div class="day__temp--min">38°</div>
+              </div>
+            </div>
+
+            <div class="day">
+              <h5 class="day--name day--6">Sun</h5>
+              <img
+                src="src/animated/thunder.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">23°</div>
+                <div class="day__temp--min">28°</div>
+              </div>
+            </div>
+
+            <div class="day">
+              <h5 class="day--name day--6">Sun</h5>
+              <img
+                src="src/animated/thunder.svg"
+                alt="Day Icon"
+                class="day__icon"
+              />
+              <div class="day__temp">
+                <div class="day__temp--max">23°</div>
+                <div class="day__temp--min">28°</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+			</div>
+		</section>
+	</body>
+</html>

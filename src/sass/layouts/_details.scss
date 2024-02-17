@@ -1,0 +1,171 @@
+@use '../abstract/variables' as *;
+
+.details {
+	flex: 1;
+	padding: 10rem 8rem;
+
+	backdrop-filter: blur(30px) brightness(120%);
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	@media only screen and (max-width: $lg-sm) {
+		padding: 5rem;
+	}
+
+	@media only screen and (max-width: $sm-sm) {
+		padding: 3rem 2rem;
+	}
+
+	@media only screen and (max-width: $md) {
+		padding: 3rem;
+
+		background: var(--bg);
+		background-size: cover;
+		background-position: 30%;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			backdrop-filter: blur(30px) brightness(120%);
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		min-height: 500px;
+
+		max-width: 100rem;
+		width: 100%;
+	}
+}
+
+.current-day {
+	display: grid;
+	// grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(3, auto);
+	grid-gap: 5rem;
+	position: relative;
+	justify-content: space-between;
+
+	@media only screen and (max-width: $sm) {
+		grid-gap: 3rem;
+	}
+
+	&::after {
+		content: '';
+		bottom: -8rem;
+		position: absolute;
+		height: 1px;
+		width: 100%;
+		background-color: var(--color-secondary);
+
+		@media only screen and (max-width: $md) {
+			bottom: -6rem;
+		}
+	}
+}
+
+.weather-details {
+	&__main {
+		font-weight: 400;
+	}
+
+	&__type {
+		text-transform: capitalize;
+		margin-top: 1rem;
+	}
+}
+
+.next-days {
+	&__details {
+		display: flex;
+		justify-content: space-between;
+
+		@media only screen and (max-width: $md) {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+.day {
+	font-size: 1.6rem;
+	cursor: pointer;
+	padding: 0.5rem 0;
+
+	:not(:last-child) {
+		margin-right: 0.75rem;
+	}
+
+	&.active {
+		background: var(--color-tertiary);
+		border-radius: 0.75rem;
+		box-shadow: 0 0.5rem 2rem rgba(#000, 0.1);
+	}
+
+	&:hover {
+		background: var(--color-tertiary);
+		border-radius: 0.75rem;
+		box-shadow: 0 0.5rem 2rem rgba(#000, 0.1);
+	}
+
+	@media only screen and (max-width: $md) {
+		margin-bottom: 3rem;
+	}
+
+	&--name {
+		text-align: center;
+		text-transform: uppercase;
+		color: var(--color-white);
+
+		font-size: 1.2rem;
+		position: relative;
+		z-index: 10;
+
+		&::before {
+			content: '';
+			position: absolute;
+			background-color: var(--color-tertiary);
+			border-radius: 100px;
+			top: 47%;
+			left: 22%;
+			transform: translateY(-50%);
+			width: 55%;
+			height: 2rem;
+			z-index: -1;
+		}
+	}
+
+	&__icon {
+		width: 8rem;
+		transition: width 0.2s;
+		position: relative;
+
+		&:hover {
+			.day__icon::after {
+				content: '';
+				width: 10rem;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+
+	&__temp {
+		position: relative;
+		color: var(--color-bottom);
+		z-index: 5;
+		display: flex;
+		justify-content: space-evenly;
+
+		&--min {
+			color: var(--color-bottom-2);
+		}
+	}
+}
